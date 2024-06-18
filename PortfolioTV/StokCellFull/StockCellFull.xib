@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="StockCellFull" customModule="PortfolioTV" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kH-fw-CXS">
+                        <rect key="frame" x="12" y="3" width="209" height="34"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xza-lt-bsB" customClass="LineChartView" customModule="PortfolioTV" customModuleProvider="target">
+                        <rect key="frame" x="237" y="15" width="90" height="10"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="ChO-Lv-Imd"/>
+                            <constraint firstAttribute="width" constant="90" id="HwX-76-Nyh"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="xza-lt-bsB" secondAttribute="bottom" constant="15" id="31h-Oe-RRC"/>
+                    <constraint firstItem="1kH-fw-CXS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="3gQ-hn-8Zx"/>
+                    <constraint firstAttribute="trailing" secondItem="xza-lt-bsB" secondAttribute="trailing" constant="16" id="AlG-7X-zNE"/>
+                    <constraint firstItem="xza-lt-bsB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="H9G-gP-P20"/>
+                    <constraint firstItem="xza-lt-bsB" firstAttribute="leading" secondItem="1kH-fw-CXS" secondAttribute="trailing" constant="16" id="QeJ-WR-czM"/>
+                    <constraint firstItem="1kH-fw-CXS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="ZCV-SX-fSm"/>
+                    <constraint firstItem="1kH-fw-CXS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="tmg-S2-jtD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lineChart" destination="xza-lt-bsB" id="SPd-Fc-JiU"/>
+                <outlet property="titleLbl" destination="1kH-fw-CXS" id="Flq-3c-Ujr"/>
+            </connections>
+            <point key="canvasLocation" x="36.641221374045799" y="-11.267605633802818"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
