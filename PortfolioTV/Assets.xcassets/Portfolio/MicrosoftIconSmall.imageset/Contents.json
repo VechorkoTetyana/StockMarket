@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Microsoft Icon small.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
