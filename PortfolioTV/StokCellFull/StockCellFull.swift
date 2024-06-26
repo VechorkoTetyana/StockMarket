@@ -14,5 +14,4 @@ class StockCellFull: UITableViewCell {
     func configure(with data: [Double]) {
         lineChart.data = data
     }
-
 }

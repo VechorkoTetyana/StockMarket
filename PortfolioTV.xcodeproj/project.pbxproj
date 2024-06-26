@@ -40,6 +40,10 @@
 		B8FDBF392C20B0A100CAA275 /* InterTight-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8FDBF372C20B0A100CAA275 /* InterTight-Black.ttf */; };
 		B8FDBF3A2C20B0A100CAA275 /* InterTight-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B8FDBF382C20B0A100CAA275 /* InterTight-BlackItalic.ttf */; };
 		B8FDBF3C2C218F3B00CAA275 /* StockCellFullController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FDBF3B2C218F3B00CAA275 /* StockCellFullController.swift */; };
+		B8FDBF462C297F7900CAA275 /* MarketMoversCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FDBF442C297F7900CAA275 /* MarketMoversCell.swift */; };
+		B8FDBF472C297F7900CAA275 /* MarketMoversCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8FDBF452C297F7900CAA275 /* MarketMoversCell.xib */; };
+		B8FDBF4A2C29888E00CAA275 /* GreenMarketCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FDBF482C29888E00CAA275 /* GreenMarketCollectionCell.swift */; };
+		B8FDBF4B2C29888E00CAA275 /* GreenMarketCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8FDBF492C29888E00CAA275 /* GreenMarketCollectionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +82,10 @@
 		B8FDBF372C20B0A100CAA275 /* InterTight-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterTight-Black.ttf"; sourceTree = "<group>"; };
 		B8FDBF382C20B0A100CAA275 /* InterTight-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "InterTight-BlackItalic.ttf"; sourceTree = "<group>"; };
 		B8FDBF3B2C218F3B00CAA275 /* StockCellFullController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCellFullController.swift; sourceTree = "<group>"; };
+		B8FDBF442C297F7900CAA275 /* MarketMoversCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketMoversCell.swift; sourceTree = "<group>"; };
+		B8FDBF452C297F7900CAA275 /* MarketMoversCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarketMoversCell.xib; sourceTree = "<group>"; };
+		B8FDBF482C29888E00CAA275 /* GreenMarketCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenMarketCollectionCell.swift; sourceTree = "<group>"; };
+		B8FDBF492C29888E00CAA275 /* GreenMarketCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GreenMarketCollectionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +118,7 @@
 		B8FDBED82C1C378100CAA275 /* PortfolioTV */ = {
 			isa = PBXGroup;
 			children = (
+				B8FDBF3D2C297A0300CAA275 /* Stock */,
 				B8FDBF142C20453700CAA275 /* Model */,
 				B8FDBF0F2C1C5CE300CAA275 /* Design */,
 				B8FDBF092C1C5B6600CAA275 /* Resources */,
@@ -196,6 +205,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		B8FDBF3D2C297A0300CAA275 /* Stock */ = {
+			isa = PBXGroup;
+			children = (
+				B8FDBF442C297F7900CAA275 /* MarketMoversCell.swift */,
+				B8FDBF452C297F7900CAA275 /* MarketMoversCell.xib */,
+				B8FDBF482C29888E00CAA275 /* GreenMarketCollectionCell.swift */,
+				B8FDBF492C29888E00CAA275 /* GreenMarketCollectionCell.xib */,
+			);
+			path = Stock;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -256,6 +276,7 @@
 			files = (
 				B8FDBF342C20B09000CAA275 /* InterTight-ExtraBold.ttf in Resources */,
 				B8FDBF0E2C1C5C3000CAA275 /* InterTight-Bold.ttf in Resources */,
+				B8FDBF4B2C29888E00CAA275 /* GreenMarketCollectionCell.xib in Resources */,
 				B8FDBEE32C1C378200CAA275 /* Assets.xcassets in Resources */,
 				B8FDBF332C20B09000CAA275 /* InterTight-Thin.ttf in Resources */,
 				B8FDBF392C20B0A100CAA275 /* InterTight-Black.ttf in Resources */,
@@ -268,6 +289,7 @@
 				B8FDBF302C20B09000CAA275 /* InterTight-Italic.ttf in Resources */,
 				B8FDBF2B2C20B09000CAA275 /* InterTight-ExtraBoldItalic.ttf in Resources */,
 				B8FDBF362C20B09000CAA275 /* InterTight-Medium.ttf in Resources */,
+				B8FDBF472C297F7900CAA275 /* MarketMoversCell.xib in Resources */,
 				B8FDBF2F2C20B09000CAA275 /* InterTight-Regular.ttf in Resources */,
 				B8FDBF2E2C20B09000CAA275 /* InterTight-BoldItalic.ttf in Resources */,
 				B8FDBEF82C1C454100CAA275 /* StockCellFull.xib in Resources */,
@@ -289,12 +311,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8FDBEEE2C1C390D00CAA275 /* PortfolioViewController.swift in Sources */,
+				B8FDBF4A2C29888E00CAA275 /* GreenMarketCollectionCell.swift in Sources */,
 				B8FDBEDA2C1C378100CAA275 /* AppDelegate.swift in Sources */,
 				B8FDBEF22C1C3B0500CAA275 /* StockCell.swift in Sources */,
 				B8FDBF132C1C5E8200CAA275 /* LineChartView.swift in Sources */,
 				B8FDBF3C2C218F3B00CAA275 /* StockCellFullController.swift in Sources */,
 				B8FDBF162C20455800CAA275 /* ModelPosition.swift in Sources */,
 				B8FDBF112C1C5D0200CAA275 /* FontName.swift in Sources */,
+				B8FDBF462C297F7900CAA275 /* MarketMoversCell.swift in Sources */,
 				B8FDBEDC2C1C378100CAA275 /* SceneDelegate.swift in Sources */,
 				B8FDBEF72C1C454100CAA275 /* StockCellFull.swift in Sources */,
 			);

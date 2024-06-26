@@ -2,15 +2,13 @@ import UIKit
 
 class StockCell: UITableViewCell {
 
-    
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleCompLbl: UILabel!
     @IBOutlet weak var subtitleComLbl: UILabel!
-    
     @IBOutlet weak var portfolioValueNum: UILabel!
     @IBOutlet weak var stockPriceNum: UILabel!
-    
     @IBOutlet weak var backgroundCellView: UIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code. Changing colors and fonts.

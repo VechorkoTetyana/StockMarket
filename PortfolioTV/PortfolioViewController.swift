@@ -27,7 +27,6 @@ class PortfolioViewController: UIViewController {
     
     private func configureTableView() {
         tableView.separatorColor = .clear
-
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "StockCell", bundle: nil), forCellReuseIdentifier: "StockCell")
@@ -43,14 +42,16 @@ class PortfolioViewController: UIViewController {
             subtitle: "Microsoft Corporations",
             coverImageName: .microsoftIcon,
             portfolioValueNum: "$7,666.23",
-            stockPriceNum: "$2,111.03"
+            stockPriceNum: "$2,111.03", 
+            lineChart: .clear
         ))
         list.append(ModelPosition(
             title: "ACLS",
             subtitle: "Axcelis Technologies, Inc",
             coverImageName: .axcelisTechnologiesIcon,
             portfolioValueNum: "$6,000.23",
-            stockPriceNum: "$647.43"
+            stockPriceNum: "$647.43", 
+            lineChart: .clear
         ))
         
         return list
