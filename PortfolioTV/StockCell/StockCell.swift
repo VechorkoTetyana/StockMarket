@@ -22,7 +22,7 @@ class StockCell: UITableViewCell {
     func configure(with modelPosition: ModelPosition) {
         titleCompLbl.text = modelPosition.title
         subtitleComLbl.text = modelPosition.subtitle
-        iconImageView.image = modelPosition.coverImageName
+        iconImageView.image = UIImage(named: modelPosition.title)
         
         portfolioValueNum.text = modelPosition.portfolioValueNum
         stockPriceNum.text = modelPosition.stockPriceNum

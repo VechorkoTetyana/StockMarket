@@ -24,7 +24,7 @@
                             <constraint firstAttribute="width" constant="32" id="oYX-vD-uPd"/>
                         </constraints>
                     </imageView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l8B-AV-kiK" customClass="LineChartView" customModule="PortfolioTV" customModuleProvider="target">
+                    <view contentMode="scaleToFill" restorationIdentifier="LineChartView" translatesAutoresizingMaskIntoConstraints="NO" id="l8B-AV-kiK" customClass="LineChartView" customModule="PortfolioTV" customModuleProvider="target">
                         <rect key="frame" x="123" y="82" width="116" height="38"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>

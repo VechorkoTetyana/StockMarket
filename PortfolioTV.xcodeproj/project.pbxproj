@@ -44,6 +44,10 @@
 		B8FDBF472C297F7900CAA275 /* MarketMoversCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8FDBF452C297F7900CAA275 /* MarketMoversCell.xib */; };
 		B8FDBF4A2C29888E00CAA275 /* GreenMarketCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FDBF482C29888E00CAA275 /* GreenMarketCollectionCell.swift */; };
 		B8FDBF4B2C29888E00CAA275 /* GreenMarketCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8FDBF492C29888E00CAA275 /* GreenMarketCollectionCell.xib */; };
+		B8FDBF4D2C2EB53200CAA275 /* StockDataDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FDBF4C2C2EB53200CAA275 /* StockDataDTO.swift */; };
+		B8FDBF4F2C2EB92300CAA275 /* MarketDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FDBF4E2C2EB92300CAA275 /* MarketDataLoader.swift */; };
+		B8FDBF512C306ABC00CAA275 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FDBF502C306ABC00CAA275 /* UIColor+hex.swift */; };
+		B8FDBF542C30A08700CAA275 /* BuyStockController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FDBF532C30A08700CAA275 /* BuyStockController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +90,10 @@
 		B8FDBF452C297F7900CAA275 /* MarketMoversCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MarketMoversCell.xib; sourceTree = "<group>"; };
 		B8FDBF482C29888E00CAA275 /* GreenMarketCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenMarketCollectionCell.swift; sourceTree = "<group>"; };
 		B8FDBF492C29888E00CAA275 /* GreenMarketCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GreenMarketCollectionCell.xib; sourceTree = "<group>"; };
+		B8FDBF4C2C2EB53200CAA275 /* StockDataDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDataDTO.swift; sourceTree = "<group>"; };
+		B8FDBF4E2C2EB92300CAA275 /* MarketDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataLoader.swift; sourceTree = "<group>"; };
+		B8FDBF502C306ABC00CAA275 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
+		B8FDBF532C30A08700CAA275 /* BuyStockController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyStockController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +126,7 @@
 		B8FDBED82C1C378100CAA275 /* PortfolioTV */ = {
 			isa = PBXGroup;
 			children = (
+				B8FDBF522C30A04E00CAA275 /* BuyStock */,
 				B8FDBF3D2C297A0300CAA275 /* Stock */,
 				B8FDBF142C20453700CAA275 /* Model */,
 				B8FDBF0F2C1C5CE300CAA275 /* Design */,
@@ -132,7 +141,6 @@
 				B8FDBEE22C1C378200CAA275 /* Assets.xcassets */,
 				B8FDBEE42C1C378200CAA275 /* LaunchScreen.storyboard */,
 				B8FDBEE72C1C378200CAA275 /* Info.plist */,
-				B8FDBF122C1C5E8200CAA275 /* LineChartView.swift */,
 			);
 			path = PortfolioTV;
 			sourceTree = "<group>";
@@ -193,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				B8FDBF102C1C5D0200CAA275 /* FontName.swift */,
+				B8FDBF502C306ABC00CAA275 /* UIColor+hex.swift */,
 			);
 			path = Design;
 			sourceTree = "<group>";
@@ -201,6 +210,9 @@
 			isa = PBXGroup;
 			children = (
 				B8FDBF152C20455800CAA275 /* ModelPosition.swift */,
+				B8FDBF4C2C2EB53200CAA275 /* StockDataDTO.swift */,
+				B8FDBF4E2C2EB92300CAA275 /* MarketDataLoader.swift */,
+				B8FDBF122C1C5E8200CAA275 /* LineChartView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,6 +226,14 @@
 				B8FDBF492C29888E00CAA275 /* GreenMarketCollectionCell.xib */,
 			);
 			path = Stock;
+			sourceTree = "<group>";
+		};
+		B8FDBF522C30A04E00CAA275 /* BuyStock */ = {
+			isa = PBXGroup;
+			children = (
+				B8FDBF532C30A08700CAA275 /* BuyStockController.swift */,
+			);
+			path = BuyStock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,10 +337,14 @@
 				B8FDBF132C1C5E8200CAA275 /* LineChartView.swift in Sources */,
 				B8FDBF3C2C218F3B00CAA275 /* StockCellFullController.swift in Sources */,
 				B8FDBF162C20455800CAA275 /* ModelPosition.swift in Sources */,
+				B8FDBF512C306ABC00CAA275 /* UIColor+hex.swift in Sources */,
 				B8FDBF112C1C5D0200CAA275 /* FontName.swift in Sources */,
+				B8FDBF4D2C2EB53200CAA275 /* StockDataDTO.swift in Sources */,
 				B8FDBF462C297F7900CAA275 /* MarketMoversCell.swift in Sources */,
 				B8FDBEDC2C1C378100CAA275 /* SceneDelegate.swift in Sources */,
 				B8FDBEF72C1C454100CAA275 /* StockCellFull.swift in Sources */,
+				B8FDBF4F2C2EB92300CAA275 /* MarketDataLoader.swift in Sources */,
+				B8FDBF542C30A08700CAA275 /* BuyStockController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
