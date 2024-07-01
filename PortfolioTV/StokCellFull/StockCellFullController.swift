@@ -59,7 +59,7 @@ class StockCellFullController: UIViewController {
         let buyStockController = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(withIdentifier: "BuyStockController") as! BuyStockController
         
-        buyStockController.details = [modelPosition]
+        buyStockController.details = modelPosition
         
         buyStockController.modalPresentationStyle = .fullScreen
         
