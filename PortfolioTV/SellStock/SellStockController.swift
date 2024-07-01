@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class BuyStockController: UIViewController {
+class SellStockController: UIViewController {
     
     @IBOutlet weak var greyView: UIView!
     @IBOutlet weak var roundedView: UIView!
@@ -32,7 +32,6 @@ class BuyStockController: UIViewController {
         
         greyView.layer.cornerRadius = 16
         greyView.layer.masksToBounds = true
-        
     }
     
     private func list() -> [ModelPosition] {
@@ -56,19 +55,20 @@ class BuyStockController: UIViewController {
         confirmBtn.setTitleColor(.white, for: .normal)
         confirmBtn.titleLabel?.font = UIFont(name: FontName.interTightSemiBold.rawValue, size: 14)
     }
-    
+  
     @IBAction func confirmBtnTapped(_ sender: Any) {
+        
         let alert = UIAlertController(
-            title: "Please confirm purchase",
-            message: "You’re buying NFLX at $88.91 per share for the amount of $114.00.",
+            title: "Are you sure?",
+            message: "Deleting the app will forever remove all the items and the list itself",
             preferredStyle: .alert
         )
         
         alert.addAction(UIAlertAction(
-            title: "Confirm",
+            title: "Delete",
             style: .default,
             handler: { [weak self] _ in
-//                self?.deleteListAndDismiss()
+  //              self?.deleteListAndDismiss()
             }
         ))
         
@@ -78,10 +78,9 @@ class BuyStockController: UIViewController {
         ))
         
         self.present(alert, animated: true)
+        
     }
-    
     @IBAction func backBtnTapped(_ sender: Any) {
         dismiss(animated: true)
     }
 }
-    
