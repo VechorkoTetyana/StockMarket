@@ -2,7 +2,8 @@ import UIKit
 
 class StockCell: UITableViewCell {
 
-    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var coverImage: UIImageView!
+    @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var titleCompLbl: UILabel!
     @IBOutlet weak var subtitleComLbl: UILabel!
     @IBOutlet weak var portfolioValueNum: UILabel!
@@ -17,15 +18,20 @@ class StockCell: UITableViewCell {
         subtitleComLbl.font = UIFont(name: FontName.interTightRegular.rawValue, size: 10)
         portfolioValueNum.font = UIFont(name: FontName.interTightSemiBold.rawValue, size: 18)
         stockPriceNum.font = UIFont(name: FontName.interTightSemiBold.rawValue, size: 18)
+        
+        coverView.layer.cornerRadius = 20
+        coverView.layer.masksToBounds = true
+    
+        selectionStyle = .none
     }
 
-    func configure(with modelPosition: ModelPosition) {
-        titleCompLbl.text = modelPosition.title
-        subtitleComLbl.text = modelPosition.subtitle
-        iconImageView.image = UIImage(named: modelPosition.title)
+    func configure(with modelPositionForBase: ModelPositionForBase) {
+        titleCompLbl.text = modelPositionForBase.title
+        subtitleComLbl.text = modelPositionForBase.subtitle
+        coverImage.image = UIImage(named: modelPositionForBase.title)
         
-        portfolioValueNum.text = modelPosition.portfolioValueNum
-        stockPriceNum.text = modelPosition.stockPriceNum
+        portfolioValueNum.text = modelPositionForBase.portfolioValueNum
+        stockPriceNum.text = modelPositionForBase.stockPriceNum
     }
     
     func setFirstCellCornerRadius() {

@@ -1,4 +1,3 @@
-import Foundation
 import UIKit
 
 class StockCellFullController: UIViewController {
@@ -8,7 +7,7 @@ class StockCellFullController: UIViewController {
     
     var stocks: [ModelPosition] = []
     var modelPosition: [ModelPosition] = []
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
@@ -60,9 +59,7 @@ class StockCellFullController: UIViewController {
             .instantiateViewController(withIdentifier: "BuyStockController") as! BuyStockController
         
         buyStockController.details = modelPosition
-        
         buyStockController.modalPresentationStyle = .fullScreen
-        
         present(buyStockController, animated: true)
     }
     
@@ -80,7 +77,6 @@ extension StockCellFullController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GreenMarketCollectionCell", for: indexPath) as? GreenMarketCollectionCell else { return UICollectionViewCell() }
         
         let stock = stocks[indexPath.row]
-        
         cell.configure(stock)
 
         return cell
@@ -133,3 +129,21 @@ extension StockCellFullController: UITableViewDelegate {
     }
 }
 
+extension StockCellFullController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let stock = stocks[indexPath.item]
+        
+        present(with: stock)
+    }
+    private func presentDetail(_ stock: ModelPosition) {
+        let buyStockController = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "BuyStockController") as! BuyStockController
+        let portfolioViewModel = PortfolioViewModel(didFetchPortfolio: {})
+        
+        buyStockController.viewModel = portfolioViewModel
+        
+        buyStockController.modalPresentationStyle = .fullScreen
+        present(buyStockController, animated: true)
+    }
+}
