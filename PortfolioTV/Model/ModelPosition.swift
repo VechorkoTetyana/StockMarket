@@ -31,3 +31,27 @@ struct ModelPosition {
     }
 }
 
+struct ModelPositionForBase {
+    let title: String
+    let subtitle: String
+    
+    let portfolioValueNum: String
+    let stockPriceNum: String
+    
+    let coverImageView: String
+
+    init(
+        title: String,
+        subtitle: String,
+        portfolioValueNum: String,
+        stockPriceNum: String,
+        coverImageView: String
+    ) {
+        self.title = title
+        self.subtitle = subtitle
+        self.portfolioValueNum = portfolioValueNum
+        self.stockPriceNum = stockPriceNum
+        self.coverImageView = coverImageView
+    }
+}
+

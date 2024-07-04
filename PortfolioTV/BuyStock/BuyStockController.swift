@@ -9,15 +9,18 @@ class BuyStockController: UIViewController {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var subtitleLbl: UILabel!
     @IBOutlet weak var priceLbl: UILabel!
-    @IBOutlet weak var stockAmountLbl: UILabel!
     @IBOutlet weak var confirmBtn: UIButton!
-    
+    @IBOutlet weak var bottomConstraints: NSLayoutConstraint!
+    @IBOutlet weak var stockAmountTextField: UITextField!
+   
+    var viewModel: PortfolioViewModel!
     var details: ModelPosition!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
         configureButton()
+        configureKeyboard()
     }
     
     func configure() {
@@ -25,31 +28,16 @@ class BuyStockController: UIViewController {
         titleLbl.text = details.title
         subtitleLbl.text = details.subtitle
         priceLbl.text = details.portfolioValueNum
-        stockAmountLbl.text = details.stockPriceNum
+        stockAmountTextField.text = details.portfolioValueNum
         
+        stockAmountTextField.keyboardType = .numberPad
+                
         roundedView.layer.cornerRadius = 20
         roundedView.layer.masksToBounds = true
         
         greyView.layer.cornerRadius = 16
         greyView.layer.masksToBounds = true
         
-    }
-    
-    private func list() -> [ModelPosition] {
-        
-        var list = [ModelPosition]()
-        
-        list.append(ModelPosition(
-            title: "NFLX",
-            subtitle: "Netflix, Inc",
-            portfolioValueNum: "$88.91",
-            stockPriceNum: "$2,111.03",
-            lineChart: .clear,
-            graphData: [],
-            isGreen: true
-        ))
-        
-        return list
     }
     
     private func configureButton() {
@@ -82,6 +70,39 @@ class BuyStockController: UIViewController {
     
     @IBAction func backBtnTapped(_ sender: Any) {
         dismiss(animated: true)
+    }
+    func configureKeyboard() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow(notification:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow(notification:)),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
+    }
+    
+    @objc private func keyboardWillShow(notification: Notification) {
+        guard let userInfo = notification.userInfo,
+              let endFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect,
+              let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double
+        else { return }
+        
+        let isKeyboardPresent = endFrame.origin.y < UIScreen.main.bounds.size.height
+        
+        // if keyboard will hide
+        
+        if !isKeyboardPresent {
+            bottomConstraints.constant = 0
+        } else { // if keyboard will show
+            let bottomHeight = 8 + endFrame.height - view.safeAreaInsets.bottom
+            bottomConstraints.constant = -bottomHeight
+       }
     }
 }
     

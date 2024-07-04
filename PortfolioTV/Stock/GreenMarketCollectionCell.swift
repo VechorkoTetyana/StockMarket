@@ -9,7 +9,6 @@ class GreenMarketCollectionCell: UICollectionViewCell {
     @IBOutlet weak var hiLowLbl: UILabel!
     @IBOutlet weak var lineChartView: LineChartView!
     
-
     override func awakeFromNib() {
         super.awakeFromNib()
    
