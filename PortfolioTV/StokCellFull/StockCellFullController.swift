@@ -58,7 +58,7 @@ class StockCellFullController: UIViewController {
         let buyStockController = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(withIdentifier: "BuyStockController") as! BuyStockController
         
-        buyStockController.details = modelPosition
+        buyStockController.details = modelPosition.toPortfolioData(portfolioValue: "$0")
         buyStockController.modalPresentationStyle = .fullScreen
         present(buyStockController, animated: true)
     }
@@ -136,14 +136,5 @@ extension StockCellFullController: UICollectionViewDelegate {
         
         present(with: stock)
     }
-    private func presentDetail(_ stock: ModelPosition) {
-        let buyStockController = UIStoryboard(name: "Main", bundle: nil)
-            .instantiateViewController(withIdentifier: "BuyStockController") as! BuyStockController
-        let portfolioViewModel = PortfolioViewModel(didFetchPortfolio: {})
-        
-        buyStockController.viewModel = portfolioViewModel
-        
-        buyStockController.modalPresentationStyle = .fullScreen
-        present(buyStockController, animated: true)
-    }
+   
 }
