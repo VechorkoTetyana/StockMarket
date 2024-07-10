@@ -1,4 +1,3 @@
-import Foundation
 import UIKit
 
 class BuyStockController: UIViewController {
@@ -12,10 +11,13 @@ class BuyStockController: UIViewController {
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var bottomConstraints: NSLayoutConstraint!
     @IBOutlet weak var stockAmountTextField: UITextField!
-   
-    var viewModel: PortfolioViewModel!
-    var details: ModelPosition!
-
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    var viewModel: PortfolioSellAndBuyViewModel!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -24,6 +26,9 @@ class BuyStockController: UIViewController {
     }
     
     func configure() {
+        
+        let details = viewModel.portfolioData
+        
         coverImage.image = UIImage(named: details.title)
         titleLbl.text = details.title
         subtitleLbl.text = details.subtitle
@@ -56,7 +61,7 @@ class BuyStockController: UIViewController {
             title: "Confirm",
             style: .default,
             handler: { [weak self] _ in
-//                self?.deleteListAndDismiss()
+                self?.buyStock(with: "sample content")
             }
         ))
         
@@ -104,5 +109,22 @@ class BuyStockController: UIViewController {
             bottomConstraints.constant = -bottomHeight
        }
     }
+
+    func buyStock(with content: String) {
+        viewModel.buyStock(with: content)
+    }
+    
+/* for SellStockController
+ 
+ func sellStock(with content: String) {
+        Task {
+            do {
+                try await repository.deletePrice(content)
+            } catch {
+              print(error)
+            }
+        }
+    }*/
+    
 }
     

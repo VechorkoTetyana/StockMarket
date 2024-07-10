@@ -25,7 +25,7 @@ class StockCell: UITableViewCell {
         selectionStyle = .none
     }
 
-    func configure(with modelPositionForBase: ModelPositionForBase) {
+    func configure(with modelPositionForBase: PortfolioData) {
         titleCompLbl.text = modelPositionForBase.title
         subtitleComLbl.text = modelPositionForBase.subtitle
         coverImage.image = UIImage(named: modelPositionForBase.title)

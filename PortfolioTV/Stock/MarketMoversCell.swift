@@ -30,8 +30,8 @@ class MarketMoversCell: UITableViewCell {
         titleLbl.text = modelPosition.title
         subtitleLbl.text = modelPosition.subtitle
         coverImage.image = UIImage(named: modelPosition.title)
-        moneyLbl.text = modelPosition.portfolioValueNum
-        hiLowLbl.text = modelPosition.stockPriceNum
+        moneyLbl.text = modelPosition.price
+        hiLowLbl.text = modelPosition.procent
         hiLowLbl.textColor = modelPosition.isGreen ? UIColor(hex: "#16A34A") : UIColor(hex: "#E20029")
         lineChartView.data = modelPosition.graphData
         lineChartView.lineColor = (modelPosition.isGreen ? UIColor(hex: "#16A34A") : UIColor(hex: "#E20029")!) ?? .gray

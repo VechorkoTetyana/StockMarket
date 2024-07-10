@@ -11,13 +11,18 @@ class SellStockController: UIViewController {
     @IBOutlet weak var priceLbl: UILabel!
     @IBOutlet weak var stockAmountLbl: UILabel!
     @IBOutlet weak var confirmBtn: UIButton!
-    
-    var details: ModelPosition!
+    @IBOutlet weak var stockAmountTextField: UITextField!
 
+    
+    var viewModel: PortfolioXViewModel!
+    var details: PortfolioData!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
         configureButton()
+//        configureKeyboard()
+
     }
     
     func configure() {
@@ -26,6 +31,9 @@ class SellStockController: UIViewController {
         subtitleLbl.text = details.subtitle
         priceLbl.text = details.portfolioValueNum
         stockAmountLbl.text = details.stockPriceNum
+        
+        stockAmountTextField.keyboardType = .numberPad
+
         
         roundedView.layer.cornerRadius = 20
         roundedView.layer.masksToBounds = true
@@ -40,10 +48,10 @@ class SellStockController: UIViewController {
         
         list.append(ModelPosition(
             title: "NFLX",
-            subtitle: "Netflix, Inc",
-            portfolioValueNum: "$88.91",
-            stockPriceNum: "$2,111.03",
-            lineChart: .clear,
+            subtitle: "Netflix, Inc", 
+            portfolioValue: "88 888",
+            price: "$2,111.03",
+            lineChart: .clear, procent: "",
             graphData: [],
             isGreen: true
         ))

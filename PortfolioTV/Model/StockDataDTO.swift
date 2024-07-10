@@ -30,12 +30,13 @@ extension StockDataDTO {
         let procentData = procentValue(data: graphData)
         
         return ModelPosition(title: self.symbol,
-                      subtitle: self.name,
-                      portfolioValueNum: String(format: "$%.2f", self.price),
-                      stockPriceNum: String(format: "%.2f%%", procentData),
-                      lineChart: UIColor.green,
-                      graphData: graphData,
-                      isGreen: detectIfGreen(data: graphData)
+                    subtitle: self.name,
+                    portfolioValue: String(format: "$%.2f", self.price),
+                    price: String(format: "$%.2f", self.price),
+                    lineChart: UIColor.green,
+                    procent: String(format: "%.2f%%", procentData),
+                    graphData: graphData,
+                    isGreen: detectIfGreen(data: graphData)
         )
     }
     
