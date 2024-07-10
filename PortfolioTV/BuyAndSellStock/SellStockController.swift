@@ -14,7 +14,7 @@ class SellStockController: UIViewController {
     @IBOutlet weak var stockAmountTextField: UITextField!
 
     
-    var viewModel: PortfolioViewModel!
+    var viewModel: PortfolioXViewModel!
     var details: PortfolioData!
     
     override func viewDidLoad() {

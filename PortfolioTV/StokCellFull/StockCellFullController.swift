@@ -58,7 +58,10 @@ class StockCellFullController: UIViewController {
         let buyStockController = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(withIdentifier: "BuyStockController") as! BuyStockController
         
-        buyStockController.details = modelPosition.toPortfolioData(portfolioValue: "$0")
+        buyStockController.viewModel = .init(portfolioData: modelPosition.toPortfolioData(portfolioValue: "$0"), dismiss: {
+            print("Test dismiss")
+            self.navigationController?.popViewController(animated: true)
+        })
         buyStockController.modalPresentationStyle = .fullScreen
         present(buyStockController, animated: true)
     }

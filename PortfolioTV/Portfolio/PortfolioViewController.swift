@@ -5,7 +5,7 @@ class PortfolioViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addNewStockBtn: UIButton!
     
-    let viewModel = PortfolioViewModel()
+    let viewModel = PortfolioXViewModel()
     
     var modelPosition: [ModelPosition] = []
     
@@ -13,7 +13,9 @@ class PortfolioViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel.didFetchPortfolio = { [weak self] in
-            self?.tableView.reloadData()
+            Task { @MainActor in
+                self?.tableView.reloadData()
+            }
         }
         
         viewModel.fetchPortfolio()

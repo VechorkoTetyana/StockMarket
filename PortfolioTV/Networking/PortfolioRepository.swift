@@ -21,20 +21,12 @@ struct PortfolioDTO: Codable {
     let stockPriceNum: String
     let subtitle: String
     let title: String
-    let coverImageView: String
     
-    init(
-        portfolioValueNum: String,
-        stockPriceNum: String,
-        subtitle: String,
-        title: String,
-        coverImageView: String
-    ) {
+    init(portfolioValueNum: String, stockPriceNum: String, subtitle: String, title: String) {
         self.portfolioValueNum = portfolioValueNum
         self.stockPriceNum = stockPriceNum
         self.subtitle = subtitle
         self.title = title
-        self.coverImageView = coverImageView
     }
 }
 
@@ -75,15 +67,16 @@ class MainPortfolioRepository {
     }
     
     func setStock(_ price: PortfolioData) async throws {
-        var request = URLRequest(url: stockUrl)
-        request.httpMethod = "POST"
+        var request = URLRequest(url: baseUrl.appending(path: "modelPosition/\(price.title).json"))
+        
+        request.httpMethod = "PUT"
         request.httpBody = try encoder.encode(price)
         
-        let (data, _) = try await URLSession.shared.data(for: request)
+       // let (data, responce) = try await URLSession.shared.data(for: request)
         
-        let decoded = try decoder.decode(FirebasePostResponseDTO.self, from: data)
+     //   let decoded = try decoder.decode(FirebasePostResponseDTO.self, from: data)
         
-        print("Successfully added \(price.title) to database with id \(decoded.name)")
+        print("Successfully added \(price.title) to database with id")
     }
     
     func deleteStock(_ stock: PortfolioData) async throws {

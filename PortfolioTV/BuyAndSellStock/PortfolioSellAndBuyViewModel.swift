@@ -1,6 +1,6 @@
 import Foundation
 
-class PortfolioViewModel {
+class PortfolioSellAndBuyViewModel {
     
     private let repository = MainPortfolioRepository()
     
@@ -13,11 +13,11 @@ class PortfolioViewModel {
         self.dismiss = dismiss
     }
     
-    func buyStock(with amount: Double) {
+    func buyStock(with amount: String) {
         Task {
             do {
                 var updatedData = portfolioData
-//                updatedData.portfolioValueNum += amount
+                updatedData.portfolioValueNum = amount
                 try await repository.setStock(portfolioData)
                 await MainActor.run {
                     self.dismiss()

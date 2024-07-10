@@ -11,11 +11,13 @@ class BuyStockController: UIViewController {
     @IBOutlet weak var confirmBtn: UIButton!
     @IBOutlet weak var bottomConstraints: NSLayoutConstraint!
     @IBOutlet weak var stockAmountTextField: UITextField!
-   
-    var viewModel: PortfolioViewModel!
     
-    private var repository: PortfolioRepository
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     
+    var viewModel: PortfolioSellAndBuyViewModel!
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
@@ -109,13 +111,7 @@ class BuyStockController: UIViewController {
     }
 
     func buyStock(with content: String) {
-        Task {
-            do {
-//                try await repository.buyStock(details)
-            } catch {
-                print(error)
-            }
-        }
+        viewModel.buyStock(with: content)
     }
     
 /* for SellStockController
